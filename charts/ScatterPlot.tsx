@@ -386,6 +386,8 @@ export class ScatterPlot extends React.Component<{
                         series={tooltipSeries}
                         maxWidth={sidebarWidth}
                         fontSize={this.chart.baseFontSize}
+                        xAxisLabel={this.transform.xAxis.label}
+                        yAxisLabel={this.transform.yAxis.label}
                         x={bounds.right - sidebarWidth}
                         y={
                             bounds.top +
@@ -408,6 +410,8 @@ interface ScatterTooltipProps {
     series: ScatterSeries
     maxWidth: number
     fontSize: number
+    xAxisLabel?: string
+    yAxisLabel?: string
     x: number
     y: number
 }
@@ -415,14 +419,21 @@ interface ScatterTooltipProps {
 @observer
 class ScatterTooltip extends React.Component<ScatterTooltipProps> {
     formatValueY(value: ScatterValue) {
-        return "Y Axis: " + this.props.formatY(value.y)
+        const { yAxisLabel } = this.props
+        return `${
+            yAxisLabel ? `${yAxisLabel} (Y Axis)` : "Y Axis"
+        }: ${this.props.formatY(value.y)}`
         //        if (value.year != value.time.y)
         //            s += " (data from " + value.time.y + ")"
         // return s
     }
 
     formatValueX(value: ScatterValue) {
-        let s = "X Axis: " + this.props.formatX(value.x)
+        const { xAxisLabel } = this.props
+        let s = `${
+            xAxisLabel ? `${xAxisLabel} (X Axis)` : "X Axis"
+        }: ${this.props.formatX(value.x)}`
+
         const formatYear = this.props.formatXYear
         if (!value.time.span && value.time.y !== value.time.x)
             s += ` (data from ${formatYear(value.time.x)})`
@@ -468,23 +479,23 @@ class ScatterTooltip extends React.Component<ScatterTooltipProps> {
                         : formatYYear(v.time.y)
                 })
             }
-            offset += year.wrap.height
+            offset += year.wrap.height + lineHeight
             const line1 = {
                 x: x,
                 y: y + offset,
                 wrap: new TextWrap({
                     maxWidth: maxWidth,
-                    fontSize: 0.55 * fontSize,
+                    fontSize: 0.6 * fontSize,
                     text: this.formatValueY(v)
                 })
             }
-            offset += line1.wrap.height
+            offset += line1.wrap.height + lineHeight
             const line2 = {
                 x: x,
                 y: y + offset,
                 wrap: new TextWrap({
                     maxWidth: maxWidth,
-                    fontSize: 0.55 * fontSize,
+                    fontSize: 0.6 * fontSize,
                     text: this.formatValueX(v)
                 })
             }
