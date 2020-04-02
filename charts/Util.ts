@@ -57,8 +57,11 @@ import {
     sortedUniq,
     zip,
     partition,
-    range
-} from "lodash"
+    range,
+    findIndex,
+    fromPairs,
+    mapKeys
+} from "lodash-es"
 export {
     isEqual,
     map,
@@ -117,7 +120,10 @@ export {
     sortedUniq,
     zip,
     partition,
-    range
+    range,
+    findIndex,
+    fromPairs,
+    mapKeys
 }
 
 import moment = require("moment")
