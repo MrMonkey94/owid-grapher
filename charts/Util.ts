@@ -1,67 +1,67 @@
-import {
-    isEqual,
-    map,
-    sortBy,
-    orderBy,
-    each,
-    keys,
-    entries,
-    trim,
-    isNumber,
-    filter,
-    extend,
-    isEmpty,
-    isFinite,
-    some,
-    every,
-    min,
-    max,
-    minBy,
-    maxBy,
-    compact,
-    uniq,
-    cloneDeep,
-    sum,
-    sumBy,
-    find,
-    identity,
-    union,
-    debounce,
-    includes,
-    toString,
-    isString,
-    keyBy,
-    values,
-    flatten,
-    groupBy,
-    reverse,
-    clone,
-    reduce,
-    noop,
-    floor,
-    ceil,
-    round,
-    toArray,
-    throttle,
-    has,
-    intersection,
-    uniqWith,
-    without,
-    uniqBy,
-    capitalize,
-    sample,
-    sampleSize,
-    pick,
-    omit,
-    difference,
-    sortedUniq,
-    zip,
-    partition,
-    range,
-    findIndex,
-    fromPairs,
-    mapKeys
-} from "lodash-es"
+// We're importing every item on its own to enable webpack tree shaking
+import * as isEqual from "lodash/isEqual"
+import * as map from "lodash/map"
+import * as sortBy from "lodash/sortBy"
+import * as orderBy from "lodash/orderBy"
+import * as each from "lodash/each"
+import * as keys from "lodash/keys"
+import * as entries from "lodash/entries"
+import * as trim from "lodash/trim"
+import * as isNumber from "lodash/isNumber"
+import * as filter from "lodash/filter"
+import * as extend from "lodash/extend"
+import * as isEmpty from "lodash/isEmpty"
+import * as isFinite from "lodash/isFinite"
+import * as some from "lodash/some"
+import * as every from "lodash/every"
+import * as min from "lodash/min"
+import * as max from "lodash/max"
+import * as minBy from "lodash/minBy"
+import * as maxBy from "lodash/maxBy"
+import * as compact from "lodash/compact"
+import * as uniq from "lodash/uniq"
+import * as cloneDeep from "lodash/cloneDeep"
+import * as sum from "lodash/sum"
+import * as sumBy from "lodash/sumBy"
+import * as find from "lodash/find"
+import * as identity from "lodash/identity"
+import * as union from "lodash/union"
+import * as debounce from "lodash/debounce"
+import * as includes from "lodash/includes"
+import * as toString from "lodash/toString"
+import * as isString from "lodash/isString"
+import * as keyBy from "lodash/keyBy"
+import * as values from "lodash/values"
+import * as flatten from "lodash/flatten"
+import * as groupBy from "lodash/groupBy"
+import * as reverse from "lodash/reverse"
+import * as clone from "lodash/clone"
+import * as reduce from "lodash/reduce"
+import * as noop from "lodash/noop"
+import * as floor from "lodash/floor"
+import * as ceil from "lodash/ceil"
+import * as round from "lodash/round"
+import * as toArray from "lodash/toArray"
+import * as throttle from "lodash/throttle"
+import * as has from "lodash/has"
+import * as intersection from "lodash/intersection"
+import * as uniqWith from "lodash/uniqWith"
+import * as without from "lodash/without"
+import * as uniqBy from "lodash/uniqBy"
+import * as capitalize from "lodash/capitalize"
+import * as sample from "lodash/sample"
+import * as sampleSize from "lodash/sampleSize"
+import * as pick from "lodash/pick"
+import * as omit from "lodash/omit"
+import * as difference from "lodash/difference"
+import * as sortedUniq from "lodash/sortedUniq"
+import * as zip from "lodash/zip"
+import * as partition from "lodash/partition"
+import * as range from "lodash/range"
+import * as findIndex from "lodash/findIndex"
+import * as fromPairs from "lodash/fromPairs"
+import * as mapKeys from "lodash/mapKeys"
+
 export {
     isEqual,
     map,
