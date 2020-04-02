@@ -17,8 +17,13 @@ const common = {
         "^serverSettings$": "<rootDir>/serverSettings",
         // Jest cannot handle importing CSS
         // https://stackoverflow.com/questions/39418555/syntaxerror-with-jest-and-react-and-importing-css-files
-        "\\.(css|less|sass|scss)$": "<rootDir>/test/styleMock.ts"
-    }
+        "\\.(css|less|sass|scss)$": "<rootDir>/test/styleMock.ts",
+        // this is not beautiful, but is the simplest solution to make jest run with the ES6-module-exporting lodash-es
+        // suggested here: https://stackoverflow.com/a/54117206/10670163
+        // other solutions would involve running babel on lodash-es to transform it to commonjs
+        "lodash-es": "lodash"
+    },
+    transformIgnorePatterns: ["/!node_modules\\/lodash-es/"]
 }
 
 module.exports = {
